@@ -9,13 +9,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    if @user
-      redirect_to @user
-    else
-      render :new
+      @user = User.create(user_params)
+      return redirect_to controller: 'users', action: 'new' unless @user.save
+      session[:user_id] = @user.id
+      redirect_to controller: 'welcomes', action: 'index'
     end
-  end
+
+
 
   def show
     @user = User.find(params[:id])
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 
 end
