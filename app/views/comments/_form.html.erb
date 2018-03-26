@@ -1,0 +1,10 @@
+<h1>NEW & EDIT</h1>
+
+
+<%= form_for @user do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %><br>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,3 +1,10 @@
 <h1>SHOW</h1>
 
-<%= @user.username %>'s profile
+<%= @user.username %>'s profile <br>
+<br>
+
+<ul>
+  <% @user.lists.each do |l| %>
+  <li><%= link_to l.action.description, l.action %></li>
+  <% end %>
+</ul>

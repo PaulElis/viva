@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :activities
   root 'users#index'
 
   resources :list_comments

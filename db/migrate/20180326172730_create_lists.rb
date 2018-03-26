@@ -3,7 +3,7 @@ class CreateLists < ActiveRecord::Migration[5.1]
     create_table :lists do |t|
       t.string :name
       t.integer :user_id
-      t.integer :action_id
+      t.integer :activity_id
 
       t.timestamps
     end
