@@ -13,9 +13,7 @@
 ActiveRecord::Schema.define(version: 20180326200029) do
 
   create_table "activities", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "location"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,7 +32,8 @@ ActiveRecord::Schema.define(version: 20180326200029) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.string "name"
+    t.string "description"
+    t.string "location"
     t.integer "user_id"
     t.integer "activity_id"
     t.datetime "created_at", null: false

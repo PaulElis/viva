@@ -1,9 +1,10 @@
+<%= link_to "Logout", logout_path %>
 <h1>INDEX</h1>
 
 
 
 <ul>
   <% @lists.each do |list| %>
-  <li><%= list.activity.description %></li>
+  <li><%= list.description %></li>
   <% end %>
 </ul>

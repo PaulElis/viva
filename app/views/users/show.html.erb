@@ -6,6 +6,6 @@
 
 <ul>
   <% @user.lists.each do |l| %>
-  <li><%= link_to l.action.description, l.action %></li>
+  <li><%= link_to l.activity.name, l.activity %></li>
   <% end %>
 </ul>
