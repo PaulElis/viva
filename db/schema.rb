@@ -18,15 +18,10 @@ ActiveRecord::Schema.define(version: 20180326200029) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "list_comments", force: :cascade do |t|
     t.integer "list_id"
-    t.integer "comment_id"
+    t.integer "user_id"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,8 +36,9 @@ ActiveRecord::Schema.define(version: 20180326200029) do
   end
 
   create_table "user_comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "comment_id"
+    t.integer "received_id"
+    t.integer "posted_id"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

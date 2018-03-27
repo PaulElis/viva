@@ -13,13 +13,14 @@ class UsersController < ApplicationController
       return redirect_to controller: 'users', action: 'new' unless @user.save
       session[:user_id] = @user.id
       redirect_to controller: 'welcomes', action: 'index'
-    end
+  end
 
   def logout
-  end 
+  end
 
 
   def show
+
     @user = User.find(params[:id])
   end
 

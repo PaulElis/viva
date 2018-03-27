@@ -10,15 +10,17 @@
   <% end %>
 </ul>
 
+Comments:
 <ul>
-  <% @user.comments.each do |comment| %>
-  <li><%= link_to comment.content, comment %></li>
+  <% @user.received_comments.each do |comment| %>
+  <li>'<%= comment.content %>' by <%= link_to comment.posted.username, comment.posted %></li>
   <% end %>
 </ul>
 
 
-
-<%= form_with model: Comment.new do |form| %>
+<%= form_with model: UserComment.create do |form| %>
   <%= form.text_area :content %><br>
+  <%= form.hidden_field :received_id, value: @user.id %>
+  <%= form.hidden_field :posted_id, value: session[:user_id] %>
   <%= form.submit %>
 <% end %>

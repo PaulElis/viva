@@ -18,3 +18,8 @@ list1 = List.create(user_id: 1, activity_id: 1, description: 'Ski Japanuary', lo
 list2 = List.create(user_id: 2, activity_id: 2, description: 'Refrain from shaving during the month of november',location: 'Anywhere')
 list3 = List.create(user_id: 3, activity_id: 3, description: 'Jump off a plane with no chute',location: 'anywhere')
 list4 = List.create(user_id: 4, activity_id: 4, description: 'Fly through the air in a squirrelsuit',location: 'anywhere')
+
+uc1 = UserComment.create(posted_id: 2, received_id: 1, content: 'Arbi the best')
+uc2 = UserComment.create(received_id: 2, posted_id: 1, content: 'Paul ok')
+
+lc1 = ListComment.create(list_id: 1, user_id: 2, content: 'Sweet list idea!')

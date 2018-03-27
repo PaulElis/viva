@@ -1,4 +1,4 @@
 class UserComment < ApplicationRecord
-  belongs_to :posted_id
-  belongs_to :received_id
+  belongs_to :posted, :class_name => 'User'
+  belongs_to :received, :class_name => 'User'
 end
