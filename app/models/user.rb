@@ -10,5 +10,31 @@ class User < ApplicationRecord
   validates :username, length: {in: 4..10}
   validates :password, length: {in: 4..10}
 
+  def users
+    Activity.all.select do |a| a.users.select do |u|
+      u == self
+      end
+    end
+  end
+
+  def self.most_activities
+    User.all.sort_by{|u| u.users.count}.last
+  end
+
+  def self.least_activities
+    User.all.sort_by{|u| u.users.count}.first
+  end
+
+  def average_activities
+    sum = 0
+    User.all.each{|u| sum += u.users.count}
+    sum / (users.count)
+  end
+
+  def self.highest_average_activities
+    User.all.sort_by {|u| u.average_activities}.last
+  end
+
+
 
 end

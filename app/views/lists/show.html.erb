@@ -1,6 +1,12 @@
 <%= link_to "Logout", logout_path %>
 <h1>LIST SHOW</h1>
 
+
+
+
+
+
+
   <%= link_to @list.user.username, @list.user%>:
   <ul>
   <br>
@@ -13,4 +19,18 @@
 
 </ul>
 
+
 <!-- Add comment below -->
+Comments:
+<ul>
+  <% @list.list_comments.each do |comment| %>
+  <li>'<%= comment.content %>' by <%= link_to comment.user.username, comment.user %></li>
+  <% end %>
+</ul>
+
+<%= form_with model: ListComment.create do |form| %>
+  <%= form.text_area :content %><br>
+  <%= form.hidden_field :list_id, value: @list.id %>
+  <%= form.hidden_field :user_id, value: session[:user_id] %>
+  <%= form.submit %>
+<% end %>

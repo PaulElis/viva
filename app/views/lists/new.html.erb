@@ -11,6 +11,9 @@ Create using existing:
   <br>
   <%= f.label :activity_id %>
   <%= f.collection_select :activity_id, Activity.all, :id, :category %>
+    <%= f.fields_for :activity, @list.build_activity do |c| %>
+      <%c.text_field :category %>
+    <%end%>
 
 
   <%= f.submit %>
