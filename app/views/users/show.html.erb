@@ -1,11 +1,14 @@
 <%= link_to "Logout", logout_path %>
-<h1>SHOW</h1>
+<h1>USERS SHOW</h1>
 
 <%= @user.username %>'s profile <br>
 <br>
 
 <ul>
-  <% @user.lists.each do |l| %>
-  <li><%= link_to l.activity.name, l.activity %></li>
+  <% @user.lists.each do |list| %>
+  <li><%= link_to list.description, list %></li>
   <% end %>
 </ul>
+
+
+<%= render '../comments/new' %>

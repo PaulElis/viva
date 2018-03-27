@@ -1,5 +1,10 @@
 <%= link_to "Logout", logout_path %>
-<h1>SHOW</h1>
-<%= @activity.category%><br>
-<%= @activity.list.description%><br>
-<%= @activity.location %>
+<h1>ACTIVITIES SHOW</h1>
+Category: <%= @activity.category%><br>
+<br>
+
+<% @activity.lists.each do |list| %>
+  User: <%= link_to list.user.username, list.user %>
+  <br>
+  ----<%= list.description %><br>
+<% end %>

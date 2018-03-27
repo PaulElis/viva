@@ -1,8 +1,16 @@
 <%= link_to "Logout", logout_path %>
-<h1>SHOW</h1>
+<h1>LIST SHOW</h1>
 
-<%= @list.user.username %>
-<br>
+  <%= link_to @list.user.username, @list.user%>:
+  <ul>
+  <br>
+  <li>Category: <%= @list.activity.category %></li>
+  <br>
+  <li>Description: <%= @list.description %></li>
+  <br>
+  <li>Location: <%= @list.location %></li>
+  <br>
 
-<br>
+</ul>
+
 <!-- Add comment below -->
