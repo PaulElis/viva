@@ -15,6 +15,8 @@ class UsersController < ApplicationController
       redirect_to controller: 'welcomes', action: 'index'
     end
 
+  def logout
+  end 
 
 
   def show
