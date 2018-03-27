@@ -10,5 +10,15 @@
   <% end %>
 </ul>
 
+<ul>
+  <% @user.comments.each do |comment| %>
+  <li><%= link_to comment.content, comment %></li>
+  <% end %>
+</ul>
 
-<%= render '../comments/new' %>
+
+
+<%= form_with model: Comment.new do |form| %>
+  <%= form.text_area :content %><br>
+  <%= form.submit %>
+<% end %>
