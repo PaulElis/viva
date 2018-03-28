@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-arbi1 = User.create(username: 'Arbi1', password: '1234567', password_confirmation: '1234567')
-paul1 = User.create(username: 'Paul1', password: '1234567', password_confirmation: '1234567')
+arbi1 = User.create(username: 'Arbi', password: '1234', password_confirmation: '1234')
+paul1 = User.create(username: 'Paul', password: '1234', password_confirmation: '1234')
 
 japanuary = Activity.create(category: "Ski")
 noshavenovember = Activity.create(category: "Shaving")
 skydiving = Activity.create(category: "Skydive")
-squirrelsuit = Activity.create(category: "fly", )
+squirrelsuit = Activity.create(category: "Fly", )
 
 list1 = List.create(user_id: 1, activity_id: 1, description: 'Ski Japanuary', location: 'Japan')
-list2 = List.create(user_id: 2, activity_id: 2, description: 'Refrain from shaving during the month of november',location: 'Anywhere')
-list3 = List.create(user_id: 3, activity_id: 3, description: 'Jump off a plane with no chute',location: 'anywhere')
-list4 = List.create(user_id: 4, activity_id: 4, description: 'Fly through the air in a squirrelsuit',location: 'anywhere')
+list2 = List.create(user_id: 2, activity_id: 2, description: 'Refrain from shaving in November',location: 'Anywhere')
+list3 = List.create(user_id: 3, activity_id: 3, description: 'Jump off a plane with no parachute',location: 'Anywhere')
+list4 = List.create(user_id: 4, activity_id: 4, description: 'Fly through the air in a squirrelsuit',location: 'Anywhere')
 
 uc1 = UserComment.create(posted_id: 2, received_id: 1, content: 'Arbi the best')
 uc2 = UserComment.create(received_id: 2, posted_id: 1, content: 'Paul ok')
