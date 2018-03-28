@@ -8,13 +8,24 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
   </head> <div class ="navigation">
     <ul>
-      <%if session[:user_id] %>
+    <%if session[:user_id] %>
       <%=link_to User.find(session[:user_id]).username, user_path(session[:user_id])%>
+
+        <%= link_to "Users", users_path %>
+        <%= link_to "Activities", activities_path %>
+        <%= link_to "New Item", new_list_path %>
+        <%= link_to "Logout", logout_path %>
+        <%= form_tag(activities_search_path	, method: :get) do %>
+        <%= label_tag(:search, "Search by Activity:") %>
+        <%= text_field_tag :search %>
+        <%= submit_tag "Search" %>
       <% end %>
-      <%= link_to "Users", users_path %>
-      <%= link_to "Activities", activities_path %>
-      <%= link_to "New Item", new_list_path %>
-      <%= link_to "Logout", logout_path %>
+      <%= form_tag(users_search_path	, method: :get) do %>
+      <%= label_tag(:search, "Search by User:") %>
+      <%= text_field_tag :search %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  <% end %>
     </ul>
 
   <body>

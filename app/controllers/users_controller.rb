@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
 
   def index
+    if params[:search] == ""
+    @users = []
+    elsif params[:search]
+    @users = User.all.select{|user| user.username.downcase.include?(params[:search].downcase)}
+    else
     @users = User.all
+    end
   end
 
   def new

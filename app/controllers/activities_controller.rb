@@ -1,7 +1,13 @@
 class ActivitiesController < ApplicationController
 
     def index
+      if params[:search] == ""
+      @activities = []
+      elsif params[:search]
+      @activities = Activity.all.select{|activity| activity.category.downcase.include?(params[:search].downcase)}
+      else
       @activities = Activity.all
+      end
     end
 
     def new

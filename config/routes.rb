@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: :logout
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-
+  get 'activities/search', to: "activities#index"
+  get 'users/search', to: "users#index"
 
 
 
