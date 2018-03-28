@@ -2,5 +2,5 @@
 <%= form_for @user, url: login_path, method: :post do |f| %>
 <label>Username:</label><%= f.text_field :username %><br>
 <label>Password:</label><%= f.password_field :password %><br>
-<%= f.submit %>
+<%= f.submit "Login" %>
 <%end%>

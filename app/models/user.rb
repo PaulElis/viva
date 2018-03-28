@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
 
   validates :username, uniqueness: true
-  validates :username, length: {in: 4..10}
-  validates :password, length: {in: 4..10}
+  validates :username, length: {in: 4..15}
+  validates :password, length: {in: 4..15}
 
   def users
     Activity.all.select do |a| a.users.select do |u|
