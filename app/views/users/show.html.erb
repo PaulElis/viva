@@ -1,25 +1,26 @@
-<h1>USERS SHOW</h1>
-
-<%= @user.username %>'s profile <br>
+<br>
 <br>
 
-<ul>
+<u><h2 class= "ui centered header"><%= @user.username %>'s list<br></h2></u>
+
+<ul class= "ui centered sub header">
   <% @user.lists.each do |list| %>
   <li><%= link_to list.description, list %></li>
   <% end %>
 </ul>
 
+<ul class= "ui centered sub header">
 Comments:
-<ul>
   <% @user.received_comments.each do |comment| %>
   <li>'<%= comment.content %>' by <%= link_to comment.posted.username, comment.posted %></li>
   <% end %>
 </ul>
 
-
-<%= form_with model: UserComment.create do |form| %>
-  <%= form.text_area :content %><br>
-  <%= form.hidden_field :received_id, value: @user.id %>
-  <%= form.hidden_field :posted_id, value: session[:user_id] %>
-  <%= form.submit %>
-<% end %>
+<ul class= "ui centered sub header">
+  <%= form_with model: UserComment.create do |form| %>
+    <%= form.text_area :content %><br>
+    <%= form.hidden_field :received_id, value: @user.id %>
+    <%= form.hidden_field :posted_id, value: session[:user_id] %>
+    <%= form.submit %>
+  <% end %>
+</ul>

@@ -14,15 +14,22 @@
 
   <body>
     <div class="center">
-      <h1>Viva!</h1>
-      <%=link_to "Log In", "/login"  %><br>
-      <%= link_to "Sign Up", "users/new" %>
+      <font color = white><h1>Viva!</h1>
+      <%=link_to "Log In", "/login", class: "link-color"  %><br>
+      <%= link_to "Sign Up", "users/new", class: "link-color" %>
     </div>
 
-    <div id="Container1">
+
+
+    <!-- <div id="Container1">
+      <%#= video_tag "viva.mp4", autoplay: :true, muted: :true %>
+    </div> -->
+
+    <!-- <div id="Container1">
       <video autoplay="" loop="" muted="" poster="">
-       <source src= '<%= asset_path "viva.mp4" %>' type="video/mp4">
+       <source src= '<%#= asset_path "viva.mp4" %>' type="video/mp4">
       </video>
-    </div>
+    </div> -->
+
   </body>
 </html>

@@ -1,9 +1,18 @@
+<br>
+<br>
 
-<h1>ACTIVITIES INDEX</h1>
+<u><h2 class= "ui centered header">ACTIVITIES</h2></u>
+
+<div class="centered menu">
+  <div class="item">
+    <%= form_tag(activities_search_path	, method: :get) do %>
+      <%= text_field_tag :search, placeholder="Search by Activity" %>
+    <% end %>
+  </div>
+</div>
 
 
-
-<ul>
+<ul class= "ui centered sub header">
   <% @activities.each do |activity| %>
   <li><%= link_to activity.category, activity %></li>
   <% end %>

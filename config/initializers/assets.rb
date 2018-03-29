@@ -10,6 +10,11 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 
 Rails.application.config.assets.paths << "#{Rails.root}/app/assets/videos"
+
+Rails.application.config.assets.paths << "#{Rails.root}/public/videos"
+
+Rails.application.config.assets.precompile += %w( viva.mp4 )
+
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

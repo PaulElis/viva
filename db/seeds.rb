@@ -11,8 +11,8 @@ paul1 = User.create(username: 'Paul', password: '1234', password_confirmation: '
 
 skiing = Activity.create(category: "Skiing")
 shaving = Activity.create(category: "Shaving")
-skydiving = Activity.create(category: "Skydive")
-squirrel_suit = Activity.create(category: "Squirel suit")
+skydiving = Activity.create(category: "Skydiving")
+squirrel_suit = Activity.create(category: "Squirrel suit")
 
 
 surfing = Activity.create(category: "Surfing")

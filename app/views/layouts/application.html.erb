@@ -12,29 +12,100 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
   </head>
 
-  <nav>
-    <%if session[:user_id] %>
-        <%= link_to "Home", welcomes_path %>
-        <%= link_to User.find(session[:user_id]).username, user_path(session[:user_id])%>
-        <%= link_to "Users", users_path %>
-        <%= link_to "Activities", activities_path %>
-        <%= link_to "New Item", new_list_path %>
-        <%= link_to "Logout", logout_path %>
-        <%= form_tag(activities_search_path	, method: :get) do %>
-        <%= label_tag(:search, "Search by Activity:") %>
-        <%= text_field_tag :search %>
-        <%= submit_tag "Search" %>
-      <% end %>
-
-      <%= form_tag(users_search_path	, method: :get) do %>
-      <%= label_tag(:search, "Search by User:") %>
-      <%= text_field_tag :search %>
-      <%= submit_tag "Search" %>
-    <% end %>
-  <% end %>
-</nav>
-
   <body>
+
+  <div class="ui large teal seven item inverted menu">
+    <%if session[:user_id] %>
+    <div class="item">
+      <div class="ui yellow button"><%= link_to "Home", welcomes_path %></div>
+      <%#= link_to "Home", welcomes_path %>
+    </div>
+    <div class="item">
+      <div class="ui yellow button"><%= link_to User.find(session[:user_id]).username, user_path(session[:user_id])%></div>
+      <%#= link_to User.find(session[:user_id]).username, user_path(session[:user_id])%>
+    </div>
+    <div class="item">
+      <div class="ui yellow button"><%= link_to "Users", users_path %></div>
+      <%#= link_to "Users", users_path %>
+    </div>
+    <div class="item">
+      <div class="ui yellow button"><%= link_to "Activities", activities_path %></div>
+      <%#= link_to "Activities", activities_path %>
+    </div>
+    <div class="item">
+      <div class="ui yellow button"><%= link_to "New Item", new_list_path %></div>
+      <%#= link_to "New Item", new_list_path %>
+    </div>
+
+    <!-- <div class="right  menu"> -->
+    <div class="item">
+      <%= form_tag(users_search_path	, method: :get) do %>
+      <%= text_field_tag :search, placeholder="Search by User" %>
+      <% end %>
+    </div>
+    <!-- </div> -->
+
+    <div class="ui item">
+      <div class="ui yellow button"><%= link_to "Logout", logout_path %></div>
+      <%#= link_to "Logout", logout_path %>
+
+
+  </div>
+    <br>
+
+    <!-- <div class="left  menu">
+      <div class="item"> -->
+      <%#= form_tag(activities_search_path	, method: :get) do %>
+        <%#= text_field_tag :search, placeholder="Search by Activity" %>
+        <%#= submit_tag "Search" %>
+      <%# end %>
+      <!-- </div>
+    </div> -->
+
+
+    <% end %>
+  </div>
+
+
+  <nav>
+    <%#if session[:user_id] %>
+        <%#= link_to "Home", welcomes_path %>
+        <%#= link_to "Home", welcomes_path %>
+        <%#= link_to User.find(session[:user_id]).username, user_path(session[:user_id])%>
+        <%#= link_to User.find(session[:user_id]).username, user_path(session[:user_id])%>
+        <%#= link_to "Users", users_path %>
+        <%#= link_to "Users", users_path %>
+        <%#= link_to "Activities", activities_path %>
+        <%#= link_to "Activities", activities_path %>
+        <%#= link_to "New Item", new_list_path %>
+        <%#= link_to "New Item", new_list_path %>
+        <%#= link_to "Logout", logout_path %>
+        <%#= link_to "Logout", logout_path %>
+
+          <%#= form_tag(activities_search_path	, method: :get) do %>
+          <%#= form_tag(activities_search_path	, method: :get) do %>
+            <%#= label_tag(:search, "Search by Activity:") %>
+            <%#= label_tag(:search, "Search by Activity:") %>
+            <%#= text_field_tag :search %>
+            <%#= text_field_tag :search %>
+            <%#= submit_tag "Search" %>
+            <%#= submit_tag "Search" %>
+          <%# end %>
+
+        <%#= form_tag(users_search_path	, method: :get) do %>
+        <%#= form_tag(users_search_path	, method: :get) do %>
+          <%#= label_tag(:search, "Search by User:") %>
+          <%#= label_tag(:search, "Search by User:") %>
+          <%#= text_field_tag :search %>
+          <%#= text_field_tag :search %>
+          <%#= submit_tag "Search" %>
+          <%#= submit_tag "Search" %>
+        <%# end %>
+
+    <%# end %>
+  </nav>
+
     <%= yield %>
+
   </body>
 </html>

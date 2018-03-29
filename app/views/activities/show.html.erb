@@ -1,15 +1,16 @@
-<%= link_to "Logout", logout_path %>
-<h1>ACTIVITIES SHOW</h1>
-Category: <%= @activity.category%><br>
-
 <br>
+<br>
+<br>
+
+
+<h3 class= "ui centered header"><%= @activity.category%></h3>
+
 <% if FileTest.exist?("app/assets/images/#{@image}") %>
   <img class="ui large centered image" src='<%= asset_path "#{@image}" %>'>
 <% end %>
-<br>
 
-<% @activity.lists.each do |list| %>
-  User: <%= link_to list.user.username, list.user %>
-  <br>
-  ----<%=link_to list.description, list %><br>
-<% end %>
+<ul class= "ui centered sub header">
+  <% @activity.lists.each do |list| %>
+    <%= link_to list.user.username, list.user %> wants to <%=link_to list.description, list %>.<br>
+  <% end %>
+</ul>

@@ -1,6 +1,4 @@
-<h1>LIST NEW</h1>
-
-Create using existing:
+<h2>New item:</h2>
 <%= form_for @list do |f| %>
 
   <%= f.label :description %>
@@ -16,5 +14,5 @@ Create using existing:
     <%end%>
 
 
-  <%= f.submit %>
+  <%= f.submit "Create Item"%>
 <% end %>
