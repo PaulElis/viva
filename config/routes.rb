@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get 'activities/search', to: "activities#index"
   get 'users/search', to: "users#index"
 
+  resources :lists do
+    member do
+       post 'complete'
+    end
+  end
+
 
 
   root 'welcomes#index'
@@ -15,6 +21,7 @@ Rails.application.routes.draw do
   resources :user_comments
   resources :comments
   resources :lists
+
   resources :users
   resources :welcomes
   resources :activities

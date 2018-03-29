@@ -21,6 +21,26 @@ class ListsController < ApplicationController
       render :new
     end
   end
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:id])
+    if @list.save
+      redirect_to @list
+    else
+      redirect_to @list
+    end
+
+  end
+    def complete
+      @list = List.find(params[:id])
+      @list.completed = true
+      @list.save
+      redirect_to @list
+    end
+
 
   private
 

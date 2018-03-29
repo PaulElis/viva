@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180326200029) do
     t.string "location"
     t.integer "user_id"
     t.integer "activity_id"
+    t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
