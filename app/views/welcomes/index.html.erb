@@ -14,9 +14,14 @@
 
   <body>
     <div class="center">
+<<<<<<< HEAD
       <font color = white><h1>Viva!</h1>
+      <% if session[:user_id] %>
+      <%=link_to "Log Out", "/logout", class: "link-color" %>
+      <%else%>
       <%=link_to "Log In", "/login", class: "link-color"  %><br>
       <%= link_to "Sign Up", "users/new", class: "link-color" %>
+      <%end %>
     </div>
 
 

@@ -5,7 +5,15 @@
 
 <ul class= "ui centered sub header">
   <% @user.lists.each do |list| %>
-  <li><%= link_to list.description, list %></li>
+  <li><%= link_to list.description, list %>
+        <%= form_with model: List.create do |form| %>
+        <%=  form.hidden_field :description, value: list.description %>
+        <%=  form.hidden_field :location, value: list.location %>
+        <%=  form.hidden_field :user_id, value: session[:user_id] %>
+        <%=  form.hidden_field :activity_id, value: list.activity_id %>
+        <%= form.submit "Add" %>
+        <% end %>
+    </li>
   <% end %>
 </ul>
 
