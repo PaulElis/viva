@@ -13,28 +13,29 @@
   </head> <div class ="navigation">
 
   <body>
-    <div class="center">
-<<<<<<< HEAD
-      <font color = white><h1>Viva!</h1>
-      <% if session[:user_id] %>
-      <%=link_to "Log Out", "/logout", class: "link-color" %>
-      <%else%>
-      <%=link_to "Log In", "/login", class: "link-color"  %><br>
-      <%= link_to "Sign Up", "users/new", class: "link-color" %>
-      <%end %>
+
+    <div id="Container2">
+      <h1 style="color:white">Viva!</h1>
+        <% if session[:user_id] %>
+        <h3><%=link_to "Log Out", "/logout", class: "link-color" %></h3>
+        <%else%>
+        <h3><%=link_to "Log In", "/login", class: "link-color"  %><br></h3>
+        <h3><%= link_to "Sign Up", "users/new", class: "link-color" %></h3>
+        <%end %>
     </div>
 
 
 
-    <!-- <div id="Container1">
-      <%#= video_tag "viva.mp4", autoplay: :true, muted: :true %>
-    </div> -->
+  <!-- <div id="Container1">
+      <%= video_tag "viva.mp4", autoplay: :true, muted: :true %>
+  </div>  -->
 
-    <!-- <div id="Container1">
+    <div id="Container1">
       <video autoplay="" loop="" muted="" poster="">
-       <source src= '<%#= asset_path "viva.mp4" %>' type="video/mp4">
-      </video>
-    </div> -->
+       <source src= '<%= asset_path "viva.mp4" %>' type="video/mp4">
+       </video>
+
+    </div>
 
   </body>
 </html>

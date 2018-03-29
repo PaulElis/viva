@@ -35,6 +35,24 @@ class User < ApplicationRecord
     User.all.sort_by {|u| u.average_activities}.last
   end
 
+  def total_activities
+  self.lists.count
+  end
+
+  def completed_activities
+    count = 0
+    self.lists.each do |activities|
+      if activities.completed == true
+        count +=1
+      end
+    end
+   count
+  end
+
+  def completed_activity_percentage
+    percent = (completed_activities.to_f/self.total_activities.to_f) * 100
+    return "#{percent.round}% of the list completed!"
+  end
 
 
 end

@@ -8,10 +8,10 @@
 
 <ul class= "ui centered sub header">
   <li><%= link_to @list.activity.category, @list.activity %></li>
+  <%if @list.completed == false %>
+  <%= button_to "Completed",complete_list_path %>
+  <%end%>
 </ul>
-<%if @list.completed == false %>
-<%= button_to "Completed",complete_list_path %>
-<%end%>
 
 
 <!-- Add comment below -->
