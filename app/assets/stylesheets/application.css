@@ -14,21 +14,29 @@
  *= require_self
  */
 
- body {background-color: #FE9B2A;}
-
- /* .item {
-    text-decoration: underline;
-    text-decoration-color: red;
-    background-color: yellow;
-  } */
-
-  h1 {
-      text-align: center;
-      color: black;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  body {
+    background-color: #FE9B2A;
   }
 
   a {
     color: #1DAE65;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  input#search {
+    color: black
+  }
+
+  .button {
+    border: 1px black;
+  }
+
+  #new-item-form {
+    margin: 10%;
+    border-color: white;
+    border-style: solid;
+    padding: 2%;
+    background-color: #0EB796;
+    color: #FE9B2A;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }

@@ -1,18 +1,20 @@
-<h2>New item:</h2>
-<%= form_for @list do |f| %>
+<div id="new-item-form" class="container">
+  <h2>New item:</h2>
+    <div class="ui form">
+      <%= form_for @list do |f| %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <br>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <br>
-  <%= f.label :activity_id %>
-  <%= f.collection_select :activity_id, Activity.all, :id, :category %>
-    <%= f.fields_for :activity, @list.build_activity do |c| %>
-      <%c.text_field :category %>
-    <%end%>
-
-
-  <%= f.submit "Create Item"%>
-<% end %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+        <br>
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+        <br>
+        <%= f.label :activity_id %>
+          <%= f.collection_select :activity_id, Activity.all, :id, :category %>
+            <%= f.fields_for :activity, @list.build_activity do |c| %>
+              <%c.text_field :category %>
+              <%end%>
+          <%= f.submit "Create Item"%>
+        <% end %>
+    </div>
+</div>
