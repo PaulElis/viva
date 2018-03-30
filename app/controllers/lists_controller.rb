@@ -39,7 +39,7 @@ class ListsController < ApplicationController
       @list = List.find(params[:id])
       @list.completed = true
       @list.save
-      byebug
+      
       redirect_to @list
 
     end

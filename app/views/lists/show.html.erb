@@ -13,9 +13,9 @@
     <%= button_to "Completed",complete_list_path %>
   <% elsif @list.completed == true && @list.list_picture == nil %>
     <%= form_for @list do |f| %>
-    <label>Show us your moves!</label>
-    <%=f.text_field :list_picture %>
-    <%=f.submit "Upload Photo Url" %>
+    <label>Show us your moves!</label><br>
+    <%=f.text_field :list_picture, placeholder: "Upload Photo Url" %>
+    <%=f.submit%>
     <%end%>
   <% end%>
 </ul>
