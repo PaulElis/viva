@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @image = @list.activity.category.downcase.split(" ").join("-") << ".jpg"
   end
 
   def new
@@ -27,7 +28,7 @@ class ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
-    if @list.save
+    if @list.update(list_params)
       redirect_to @list
     else
       redirect_to @list
@@ -38,14 +39,16 @@ class ListsController < ApplicationController
       @list = List.find(params[:id])
       @list.completed = true
       @list.save
+      byebug
       redirect_to @list
+
     end
 
 
   private
 
     def list_params
-      params.require(:list).permit(:description, :location, :user_id, :activity_id, :activity, activity_attributes:[:category])
+      params.require(:list).permit(:description, :location, :user_id, :activity_id,:list_picture, :activity, activity_attributes:[:category])
     end
 
 end

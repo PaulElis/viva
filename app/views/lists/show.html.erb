@@ -1,16 +1,23 @@
 <h3 class= "ui centered header"> <%= link_to @list.user.username, @list.user%> wants to <%= @list.description %> in <%= @list.location %>.</h3>
 
 
-
-<% if FileTest.exist?("app/assets/images/#{@image}") %>
+<% if @list.list_picture %>
+  <img class="ui large centered image" src='<%="#{@list.list_picture}"%>'>
+<% elsif FileTest.exist?("app/assets/images/#{@image}") %>
   <img class="ui large centered image" src='<%= asset_path "#{@image}" %>'>
 <% end %>
 
 <ul class= "ui centered sub header">
   <li><%= link_to @list.activity.category, @list.activity %></li>
-  <%if @list.completed == false %>
-  <%= button_to "Completed",complete_list_path %>
-  <%end%>
+  <% if @list.completed == false %>
+    <%= button_to "Completed",complete_list_path %>
+  <% elsif @list.completed == true && @list.list_picture == nil %>
+    <%= form_for @list do |f| %>
+    <label>Show us your moves!</label>
+    <%=f.text_field :list_picture %>
+    <%=f.submit "Upload Photo Url" %>
+    <%end%>
+  <% end%>
 </ul>
 
 
