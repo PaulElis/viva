@@ -26,8 +26,8 @@
     color: black
   }
 
-  #nav-button {
-    border-color: white;
+  .button {
+    border: 1px black;
   }
 
   #new-item-form {

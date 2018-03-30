@@ -1,12 +1,19 @@
-<br>
-<br>
-<%if @user.total_activities == 0 %>
-  <h1>You have no activities! You should add some!</h1>
-<%else%>
-  <h1><%=@user.completed_activities%>/<%=@user.total_activities%> list items completed!</h1>
-<%end%>
-<h1><%=@user.completed_activity_percentage %></h1>
-<u><h2 class= "ui centered header"><%= @user.username %>'s list<br></h2></u>
+<h2 id="index-form" class= "ui centered header"><%= @user.username %>'s list<br></h2>
+
+
+<div class="w3-light-grey">
+  <div class="w3-blue" style="width: <%=@user.completed_activities%>/<%=@user.total_activities%>">
+
+  <%if @user.total_activities == 0 %>
+    <h4>You have no activities! You should add some!</h4>
+  <%else%>
+    <h4><%=@user.completed_activities%>/<%=@user.total_activities%> goals or <%=@user.completed_activity_percentage %> of <%= @user.username %>'s list completed!</h4>
+  <%end%>
+</div>
+
+<!-- <h3><%#=@user.completed_activity_percentage %></h3> -->
+
+<hr>
 
 <ul class= "ui centered sub header">
   <% @user.lists.each do |list| %>
