@@ -7,9 +7,6 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @image = @list.activity.category.downcase.split(" ").join("-") << ".jpg"
-    @place = @list.location
-    @place.gsub!(/\W+/,',+')
-    byebug
   end
 
   def new

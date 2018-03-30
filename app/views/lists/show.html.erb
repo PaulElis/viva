@@ -1,4 +1,4 @@
-<h3 class= "ui centered header"> <%= link_to @list.user.username, @list.user%> wants to <%= @list.description %> in <%=link_to @list.location,"https://www.google.com/maps/search/#{@place}"%>.</h3>
+<h3 class= "ui centered header"> <%= link_to @list.user.username, @list.user%> wants to <%= @list.description %> in <%=link_to @list.location,"https://www.google.com/maps/search/#{@list.map_location}"%>.</h3>
 
 
 <% if @list.list_picture %>
