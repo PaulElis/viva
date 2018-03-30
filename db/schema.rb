@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180326200029) do
   create_table "lists", force: :cascade do |t|
     t.string "description"
     t.string "location"
+    t.string "list_picture"
     t.integer "user_id"
     t.integer "activity_id"
     t.boolean "completed", default: false
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20180326200029) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "profile_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

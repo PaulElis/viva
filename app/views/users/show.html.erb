@@ -5,6 +5,16 @@
 <%else%>
   <h1><%=@user.completed_activities%>/<%=@user.total_activities%> list items completed!</h1>
 <%end%>
+
+<%if @user.profile_picture%>
+  <img class="ui large centered image" src='<%="#{@user.profile_picture}" %>'>
+<%end%>
+
+
+<% if @user_id == session[:user_id]%>
+  <u><h2 class= "ui centered sub header"> <%= link_to "Edit your profile!", edit_user_path%></h2></u>
+<%end%>
+
 <h1><%=@user.completed_activity_percentage %></h1>
 <u><h2 class= "ui centered header"><%= @user.username %>'s list<br></h2></u>
 
