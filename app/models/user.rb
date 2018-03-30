@@ -50,7 +50,11 @@ class User < ApplicationRecord
   end
 
   def completed_activity_percentage
-    percent = (completed_activities.to_f/self.total_activities.to_f) * 100
+    if self.total_activities == 0
+     percent = 0
+    else
+      percent = (completed_activities.to_f/self.total_activities.to_f) * 100
+    end
     return "#{percent.round}% of the list completed!"
   end
 

@@ -1,6 +1,10 @@
 <br>
 <br>
-<h1><%=@user.completed_activities%> list items completed!</h1>
+<%if @user.total_activities == 0 %>
+  <h1>You have no activities! You should add some!</h1>
+<%else%>
+  <h1><%=@user.completed_activities%>/<%=@user.total_activities%> list items completed!</h1>
+<%end%>
 <h1><%=@user.completed_activity_percentage %></h1>
 <u><h2 class= "ui centered header"><%= @user.username %>'s list<br></h2></u>
 
