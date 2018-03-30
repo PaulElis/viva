@@ -7,6 +7,9 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @image = @list.activity.category.downcase.split(" ").join("-") << ".jpg"
+    @place = @list.location
+    @place.gsub!(/\W+/,',+')
+    byebug
   end
 
   def new
@@ -39,7 +42,7 @@ class ListsController < ApplicationController
       @list = List.find(params[:id])
       @list.completed = true
       @list.save
-      
+
       redirect_to @list
 
     end
